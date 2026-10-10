@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة شطرنج HTML</title>
+    <style>
+        /* تنسيق حاوية اللوحة */
+        .chessboard {
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            border: 2px solid #333;
+            margin: 20px auto;
+        }
+
+        /* تنسيق المربعات والقطع */
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            user-select: none;
+        }
+
+        /* الألوان البديلة للمربعات */
+        .white-square {
+            background-color: #f0d9b5;
+        }
+        .black-square {
+            background-color: #b58863;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">لوحة شطرنج باستخدام HTML و CSS</h2>
+
+    <div class="chessboard">
+        <!-- الصف 8 (قطع سوداء رئيسية) -->
+        <div class="cell black-square">&#9820;</div>
+        <div class="cell white-square">&#9822;</div>
+        <div class="cell black-square">&#9821;</div>
+        <div class="cell white-square">&#9819;</div>
+        <div class="cell black-square">&#9818;</div>
+        <div class="cell white-square">&#9821;</div>
+        <div class="cell black-square">&#9822;</div>
+        <div class="cell white-square">&#9820;</div>
+
+        <!-- الصف 7 (جنود سوداء) -->
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+
+        <!-- أسطر فارغة (الصف 6 إلى 3) -->
+        <div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div>
+        <div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div>
+        <div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div>
+        <div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div>
+
+        <!-- الصف 2 (جنود بيضاء) -->
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+
+        <!-- الصف 1 (قطع بيضاء رئيسية) -->
+        <div class="cell white-square">&#9814;</div>
+        <div class="cell black-square">&#9816;</div>
+        <div class="cell white-square">&#9815;</div>
+        <div class="cell black-square">&#9813;</div>
+        <div class="cell white-square">&#9812;</div>
+        <div class="cell black-square">&#9815;</div>
+        <div class="cell white-square">&#9816;</div>
+        <div class="cell black-square">&#9814;</div>
+    </div>
+
+</body>
+</html>
