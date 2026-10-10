@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة شطرنج HTML</title>
+    <style>
+        /* تنسيق حاوية اللوحة */
+        .chessboard {
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            border: 2px solid #333;
+            margin: 20px auto;
+        }
+
+        /* تنسيق المربعات والقطع */
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            user-select: none;
+        }
+
+        /* الألوان البديلة للمربعات */
+        .white-square {
+            background-color: #f0d9b5;
+        }
+        .black-square {
+            background-color: #b58863;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">لوحة شطرنج باستخدام HTML و CSS</h2>
+
+    <div class="chessboard">
+        <!-- الصف 8 (قطع سوداء رئيسية) -->
+        <div class="cell black-square">&#9820;</div>
+        <div class="cell white-square">&#9822;</div>
+        <div class="cell black-square">&#9821;</div>
+        <div class="cell white-square">&#9819;</div>
+        <div class="cell black-square">&#9818;</div>
+        <div class="cell white-square">&#9821;</div>
+        <div class="cell black-square">&#9822;</div>
+        <div class="cell white-square">&#9820;</div>
+
+        <!-- الصف 7 (جنود سوداء) -->
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div>
+        <div class="cell black-square">&#9823;</div>
+
+        <!-- أسطر فارغة (الصف 6 إلى 3) -->
+        <div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div>
+        <div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div>
+        <div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div>
+        <div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div>
+
+        <!-- الصف 2 (جنود بيضاء) -->
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div>
+        <div class="cell white-square">&#9817;</div>
+
+        <!-- الصف 1 (قطع بيضاء رئيسية) -->
+        <div class="cell white-square">&#9814;</div>
+        <div class="cell black-square">&#9816;</div>
+        <div class="cell white-square">&#9815;</div>
+        <div class="cell black-square">&#9813;</div>
+        <div class="cell white-square">&#9812;</div>
+        <div class="cell black-square">&#9815;</div>
+        <div class="cell white-square">&#9816;</div>
+        <div class="cell black-square">&#9814;</div>
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة شطرنج تفاعلية</title>
+    <style>
+        /* تنسيق حاوية اللوحة */
+        .chessboard {
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            border: 4px solid #333;
+            margin: 20px auto;
+        }
+
+        /* تنسيق المربعات */
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        /* ألوان مربعات الرقعة */
+        .white-square { background-color: #f0d9b5; }
+        .black-square { background-color: #b58863; }
+
+        /* تأثير عند تحديد القطعة المراد تحريكها */
+        .selected {
+            background-color: #7b9c5e !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">لوحة شطرنج تفاعلية (اضغط على القطعة ثم المربع لتحريكها)</h2>
+
+    <div class="chessboard" id="board">
+        <!-- الصف 8 -->
+        <div class="cell black-square">&#9820;</div><div class="cell white-square">&#9822;</div>
+        <div class="cell black-square">&#9821;</div><div class="cell white-square">&#9819;</div>
+        <div class="cell black-square">&#9818;</div><div class="cell white-square">&#9821;</div>
+        <div class="cell black-square">&#9822;</div><div class="cell white-square">&#9820;</div>
+        <!-- الصف 7 -->
+        <div class="cell white-square">&#9823;</div><div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div><div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div><div class="cell black-square">&#9823;</div>
+        <div class="cell white-square">&#9823;</div><div class="cell black-square">&#9823;</div>
+        <!-- أسطر فارغة -->
+        <div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div>
+        <div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div>
+        <div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div>
+        <div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div><div class="cell white-square"></div><div class="cell black-square"></div>
+        <!-- الصف 2 -->
+        <div class="cell black-square">&#9817;</div><div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div><div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div><div class="cell white-square">&#9817;</div>
+        <div class="cell black-square">&#9817;</div><div class="cell white-square">&#9817;</div>
+        <!-- الصف 1 -->
+        <div class="cell white-square">&#9814;</div><div class="cell black-square">&#9816;</div>
+        <div class="cell white-square">&#9815;</div><div class="cell black-square">&#9813;</div>
+        <div class="cell white-square">&#9812;</div><div class="cell black-square">&#9815;</div>
+        <div class="cell white-square">&#9816;</div><div class="cell black-square">&#9814;</div>
+    </div>
+
+    <script>
+        let selectedCell = null;
+
+        // إضافة حدث الضغط لكل مربعات اللوحة
+        document.querySelectorAll('.cell').forEach(cell => {
+            cell.addEventListener('click', function() {
+                
+                // إذا لم يتم تحديد قطعة بعد، وكان المربع المختار يحتوي على قطعة
+                if (!selectedCell && this.innerHTML.trim() !== "") {
+                    selectedCell = this;
+                    this.classList.add('selected'); // تلوين المربع المختار أخضر
+                } 
+                // إذا كانت هناك قطعة محددة مسبقاً، ونريد نقلها للمربع الجديد
+                else if (selectedCell) {
+                    // نقل نص (رمز) القطعة إلى المربع الجديد (حتى لو كان فيه قطعة أخرى لخصمها)
+                    this.innerHTML = selectedCell.innerHTML;
+                    selectedCell.innerHTML = ""; // تفريغ المربع القديم
+                    
+                    selectedCell.classList.remove('selected'); // إزالة اللون الأخضر
+                    selectedCell = null; // إعادة تعيين الاختيار
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
